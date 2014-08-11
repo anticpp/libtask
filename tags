@@ -1,0 +1,128 @@
+Alt	tags	/^Alt	task.h	\/^typedef struct Alt Alt;$\/$/
+Altarray	tags	/^Altarray	task.h	\/^typedef struct Altarray Altarra/
+CLASS	net.c	/^#define CLASS(p) ((*(unsigned char*)(p))>>6)$/
+Channel	tags	/^Channel	task.h	\/^typedef struct Channel Channel;$/
+Context	tags	/^Context	taskimpl.h	\/^typedef struct Context Conte/
+Copyright	COPYRIGHT	/^Copyright (c) 2005-2007 Russ Cox,$/
+Mtask	task.c	/^main(int argc, char **argv)$/
+QLock	task.h	/^typedef struct QLock QLock;$/
+RWLock	task.h	/^typedef struct RWLock RWLock;$/
+Rendez	task.h	/^typedef struct Rendez Rendez;$/
+Task	task.h	/^typedef struct Task Task;$/
+Tasklist	task.h	/^typedef struct Tasklist Tasklist;$/
+_chanop	channel.c	/^_chanop(Channel *c, int op, void *p, int canblock)/
+_qlock	qlock.c	/^_qlock(QLock *l, int block)$/
+_rlock	qlock.c	/^_rlock(RWLock *l, int block)$/
+_taskwakeup	rendez.c	/^_taskwakeup(Rendez *r, int all)$/
+_wlock	qlock.c	/^_wlock(RWLock *l, int block)$/
+addarray	channel.c	/^addarray(Altarray *a, Alt *alt)$/
+addtask	task.c	/^addtask(Tasklist *l, Task *t)$/
+altalldequeue	channel.c	/^altalldequeue(Alt *a)$/
+altcanexec	channel.c	/^altcanexec(Alt *a)$/
+altcopy	channel.c	/^altcopy(Alt *s, Alt *r)$/
+altdequeue	channel.c	/^altdequeue(Alt *a)$/
+altexec	channel.c	/^altexec(Alt *a)$/
+altqueue	channel.c	/^altqueue(Alt *a)$/
+amove	channel.c	/^amove(void *dst, void *src, uint n)$/
+anyready	task.c	/^anyready(void)$/
+canqlock	qlock.c	/^canqlock(QLock *l)$/
+canrlock	qlock.c	/^canrlock(RWLock *l)$/
+canwlock	qlock.c	/^canwlock(RWLock *l)$/
+chanalt	channel.c	/^chanalt(Alt *a)$/
+chanarray	channel.c	/^chanarray(Channel *c, uint op)$/
+chancreate	channel.c	/^chancreate(int elemsize, int bufsize)$/
+chanfree	channel.c	/^chanfree(Channel *c)$/
+channbrecv	channel.c	/^channbrecv(Channel *c, void *v)$/
+channbrecvp	channel.c	/^channbrecvp(Channel *c)$/
+channbrecvul	channel.c	/^channbrecvul(Channel *c)$/
+channbsend	channel.c	/^channbsend(Channel *c, void *v)$/
+channbsendp	channel.c	/^channbsendp(Channel *c, void *v)$/
+channbsendul	channel.c	/^channbsendul(Channel *c, ulong val)$/
+chanrecv	channel.c	/^chanrecv(Channel *c, void *v)$/
+chanrecvp	channel.c	/^chanrecvp(Channel *c)$/
+chanrecvul	channel.c	/^chanrecvul(Channel *c)$/
+chansend	channel.c	/^chansend(Channel *c, void *v)$/
+chansendp	channel.c	/^chansendp(Channel *c, void *v)$/
+chansendul	channel.c	/^chansendul(Channel *c, ulong val)$/
+contextswitch	task.c	/^contextswitch(Context *from, Context *to)$/
+delarray	channel.c	/^delarray(Altarray *a, int i)$/
+delaytask	testdelay.c	/^delaytask(void *v)$/
+deltask	task.c	/^deltask(Tasklist *l, Task *t)$/
+emalloc	primes.c	/^emalloc(unsigned long n)$/
+f	README	/^	Create a new task running f(arg) on a stack of si/
+fdnoblock	fd.c	/^fdnoblock(int fd)$/
+fdread	fd.c	/^fdread(int fd, void *buf, int n)$/
+fdread1	fd.c	/^fdread1(int fd, void *buf, int n)$/
+fdtask	fd.c	/^fdtask(void *v)$/
+fdwait	fd.c	/^fdwait(int fd, int rw)$/
+fdwrite	fd.c	/^fdwrite(int fd, void *buf, int n)$/
+fetchtask	httpload.c	/^fetchtask(void *v)$/
+fprint	print.c	/^fprint(int fd, char *fmt, ...)$/
+getcontext	386-ucontext.h	/^#define	getcontext(u)	getmcontext(&(u)->uc_mcontex/
+lrand	primes.c	/^lrand(void)$/
+makecontext	context.c	/^makecontext(ucontext_t *ucp, void (*func)(void), i/
+mcontext	386-ucontext.h	/^struct mcontext {$/
+mcontext_t	386-ucontext.h	/^typedef struct mcontext mcontext_t;$/
+mkfd2	tcpproxy.c	/^mkfd2(int fd1, int fd2)$/
+needstack	task.c	/^needstack(int n)$/
+nelem	tags	/^nelem	taskimpl.h	\/^#define nelem(x) (sizeof(x)\\/
+netaccept	net.c	/^netaccept(int fd, char *server, int *port)$/
+netannounce	net.c	/^netannounce(int istcp, char *server, int port)$/
+netdial	net.c	/^netdial(int istcp, char *server, int port)$/
+netlookup	net.c	/^netlookup(char *name, uint32_t *ip)$/
+nsec	fd.c	/^nsec(void)$/
+otherop	channel.c	/^#define otherop(op)	(CHANSND+CHANRCV-(op))$/
+parseip	net.c	/^parseip(char *name, uint32_t *ip)$/
+primetask	primes.c	/^primetask(void *arg)$/
+print	print.c	/^print(char *fmt, ...)$/
+printstr	print.c	/^printstr(char *dst, char *edst, char *s, int size)/
+proxytask	tcpproxy.c	/^proxytask(void *v)$/
+pushl	asm.S	/^	pushl	60(%eax)	\/* new %eip *\/$/
+qlock	qlock.c	/^qlock(QLock *l)$/
+qunlock	qlock.c	/^qunlock(QLock *l)$/
+rlock	qlock.c	/^rlock(RWLock *l)$/
+runlock	qlock.c	/^runlock(RWLock *l)$/
+rwtask	tcpproxy.c	/^rwtask(void *v)$/
+seprint	print.c	/^seprint(char *dst, char *edst, char *fmt, ...)$/
+setcontext	386-ucontext.h	/^#define	setcontext(u)	setmcontext(&(u)->uc_mcontex/
+snprint	print.c	/^snprint(char *dst, uint n, char *fmt, ...)$/
+strecpy	print.c	/^strecpy(char *dst, char *edst, char *src)$/
+swapcontext	context.c	/^swapcontext(ucontext_t *oucp, const ucontext_t *uc/
+taskalloc	task.c	/^taskalloc(void (*fn)(void*), void *arg, uint stack/
+taskcreate	task.c	/^taskcreate(void (*fn)(void*), void *arg, uint stac/
+taskdata	task.c	/^taskdata(void)$/
+taskdebug	task.c	/^taskdebug(char *fmt, ...)$/
+taskdelay	fd.c	/^taskdelay(uint ms)$/
+taskexit	task.c	/^taskexit(int val)$/
+taskexitall	task.c	/^taskexitall(int val)$/
+taskgetname	task.c	/^taskgetname(void)$/
+taskgetstate	task.c	/^taskgetstate(void)$/
+taskid	task.c	/^taskid(void)$/
+taskinfo	task.c	/^taskinfo(int s)$/
+taskmain	httpload.c	/^taskmain(int argc, char **argv)$/
+taskmainstart	task.c	/^taskmainstart(void *v)$/
+taskname	task.c	/^taskname(char *fmt, ...)$/
+taskready	task.c	/^taskready(Task *t)$/
+taskscheduler	task.c	/^taskscheduler(void)$/
+tasksleep	rendez.c	/^tasksleep(Rendez *r)$/
+taskstart	task.c	/^taskstart(uint y, uint x)$/
+taskstate	task.c	/^taskstate(char *fmt, ...)$/
+taskswitch	task.c	/^taskswitch(void)$/
+tasksystem	task.c	/^tasksystem(void)$/
+taskwakeup	rendez.c	/^taskwakeup(Rendez *r)$/
+taskwakeupall	rendez.c	/^taskwakeupall(Rendez *r)$/
+taskyield	task.c	/^taskyield(void)$/
+uchar	taskimpl.h	/^typedef unsigned char uchar;$/
+ucontext	386-ucontext.h	/^struct ucontext {$/
+ucontext_t	386-ucontext.h	/^typedef struct ucontext ucontext_t;$/
+uint	taskimpl.h	/^typedef unsigned int uint;$/
+ulong	taskimpl.h	/^typedef unsigned long ulong;$/
+ushort	taskimpl.h	/^typedef unsigned short ushort;$/
+uvlong	taskimpl.h	/^typedef unsigned long long uvlong;$/
+vfprint	print.c	/^vfprint(int fd, char *fmt, va_list arg)$/
+vlong	taskimpl.h	/^typedef long long vlong;$/
+vprint	print.c	/^vprint(char *fmt, va_list arg)$/
+vseprint	print.c	/^vseprint(char *dst, char *edst, char *fmt, va_list/
+vsnprint	print.c	/^vsnprint(char *dst, uint n, char *fmt, va_list arg/
+wlock	qlock.c	/^wlock(RWLock *l)$/
+wunlock	qlock.c	/^wunlock(RWLock *l)$/
