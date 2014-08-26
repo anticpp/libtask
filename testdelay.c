@@ -12,14 +12,16 @@ Channel *c;
 void
 delaytask(void *v)
 {
+	taskname("delay task");
 	taskdelay((int)v);
-	printf("awake after %d ms\n", (int)v);
+	printf("awake after %d ms, exit %d\n", (int)v, exitstate());
 	chansendul(c, 0);
 }
 
 void
 taskmain(int argc, char **argv)
 {
+	taskname("main");
 	int i, n;
 	
 	c = chancreate(sizeof(unsigned long), 0);
@@ -27,14 +29,14 @@ taskmain(int argc, char **argv)
 	n = 0;
 	for(i=1; i<argc; i++){
 		n++;
-		printf("x");
+		printf("x\n");
 		taskcreate(delaytask, (void*)atoi(argv[i]), STACK);
 	}
 
 	/* wait for n tasks to finish */
 	for(i=0; i<n; i++){
-		printf("y");
+		printf("y\n");
 		chanrecvul(c);
 	}
-	taskexitall(0);
+	//taskexitall(0);
 }

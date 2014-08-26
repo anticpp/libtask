@@ -165,7 +165,7 @@ struct Task
 	uint	stksize;
 	int	exiting;
 	int	alltaskslot;
-	int	system;
+	int	system;			//mark as a "system" task, not a user task, see taskexit
 	int	ready;
 	void	(*startfn)(void*);
 	void	*startarg;

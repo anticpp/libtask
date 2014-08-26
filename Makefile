@@ -13,7 +13,7 @@ OFILES=\
 	rendez.o\
 	task.o\
 
-all: $(LIB) primes tcpproxy testdelay
+all: $(LIB) testdelay tcpproxy
 
 $(OFILES): taskimpl.h task.h 386-ucontext.h power-ucontext.h
 
@@ -28,7 +28,7 @@ CFLAGS=-Wall -c -I. -ggdb
 	$(CC) $(CFLAGS) $*.c
 
 $(LIB): $(OFILES)
-	ar rvc $(LIB) $(OFILES)
+	ar rc $(LIB) $(OFILES)
 
 primes: primes.o $(LIB)
 	$(CC) -o primes primes.o $(LIB)

@@ -68,7 +68,7 @@ taskstart(uint y, uint x)
 
 //print("taskstart %p\n", t);
 	t->startfn(t->startarg);
-//print("taskexits %p\n", t);
+//print("taskexits %p, %s\n", t, t->name);
 	taskexit(0);
 //print("not reacehd\n");
 }
@@ -214,7 +214,7 @@ static void
 contextswitch(Context *from, Context *to)
 {
 	if(swapcontext(&from->uc, &to->uc) < 0){
-		fprint(2, "swapcontext failed: %r\n");
+		//fprint(2, "swapcontext failed: %r\n");
 		assert(0);
 	}
 }
@@ -227,8 +227,10 @@ taskscheduler(void)
 
 	taskdebug("scheduler enter");
 	for(;;){
-		if(taskcount == 0)
+		if(taskcount == 0) {
+			fprint(2, "no more task, exit now\n");
 			exit(taskexitval);
+		}
 		t = taskrunqueue.head;
 		if(t == nil){
 			fprint(2, "no runnable tasks! %d tasks stalled\n", taskcount);
@@ -243,6 +245,7 @@ taskscheduler(void)
 //print("back in scheduler\n");
 		taskrunning = nil;
 		if(t->exiting){
+			//printf("release task %s, exiting %d\n", t->name, t->exiting);
 			if(!t->system)
 				taskcount--;
 			i = t->alltaskslot;
@@ -412,3 +415,7 @@ taskid(void)
 	return taskrunning->id;
 }
 
+int exitstate()
+{
+	return taskrunning->exiting;
+}
