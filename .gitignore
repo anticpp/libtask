@@ -1,3 +1,6 @@
+tcpproxy
+testdelay
 *.o
 *.d
+*.a
 tags
