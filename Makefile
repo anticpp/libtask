@@ -2,8 +2,7 @@ LIB=libtask.a
 TCPLIBS=
 
 ASM=asm.o
-OFILES=\
-	$(ASM)\
+OFILES=asm.o\
 	channel.o\
 	context.o\
 	fd.o\

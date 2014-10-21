@@ -238,14 +238,14 @@ chanalt(Alt *a)
 		a[i].task = t;
 		a[i].xalt = a;
 	}
-if(dbgalt) print("alt ");
+//if(dbgalt) print("alt ");
 	ncan = 0;
 	for(i=0; i<n; i++){
 		c = a[i].c;
-if(dbgalt) print(" %c:", "esrnb"[a[i].op]);
-if(dbgalt) { if(c->name) print("%s", c->name); else print("%p", c); }
+//if(dbgalt) print(" %c:", "esrnb"[a[i].op]);
+//if(dbgalt) { if(c->name) print("%s", c->name); else print("%p", c); }
 		if(altcanexec(&a[i])){
-if(dbgalt) print("*");
+//if(dbgalt) print("*");
 			ncan++;
 		}
 	}
@@ -254,19 +254,19 @@ if(dbgalt) print("*");
 		for(i=0; i<n; i++){
 			if(altcanexec(&a[i])){
 				if(j-- == 0){
-if(dbgalt){
+/*if(dbgalt){
 c = a[i].c;
 print(" => %c:", "esrnb"[a[i].op]);
 if(c->name) print("%s", c->name); else print("%p", c);
 print("\n");
-}
+}*/
 					altexec(&a[i]);
 					return i;
 				}
 			}
 		}
 	}
-if(dbgalt)print("\n");
+//if(dbgalt)print("\n");
 
 	if(!canblock)
 		return -1;
